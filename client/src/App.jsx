@@ -6,8 +6,8 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import { Provider } from 'react-redux'; // Import from react-redux
-import store from './path-to-your-redux-store'; // Ensure this path points to your Redux store
+import { Provider } from 'react-redux';
+import store from './redux/store'; // This line has been updated
 
 import Nav from './components/Nav';
 
@@ -33,7 +33,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Provider store={store}> {/* This line replaces StoreProvider */}
+      <Provider store={store}>
         <Nav />
         <Outlet />
       </Provider>
